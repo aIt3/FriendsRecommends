@@ -1,7 +1,7 @@
 <section id="index">
     <div id="header">
-    {{#if user}}
-        <a href="users/user-profile">{{ user.username }}</a>
+    {{#if userInSession}}        
+    <a href="users/user-profile">{{ userInSession.username }}</a>
           <form id="logout-form" action="/logout" method="POST"></form>
         <a href="">Logout</a>
         </form>
