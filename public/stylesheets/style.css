@@ -20,7 +20,7 @@ h1 {
   flex-direction: row;
   justify-content: flex-end;
 }
-#header button{
+#header a{
   width:100px;
   margin-right:24px;
 }
