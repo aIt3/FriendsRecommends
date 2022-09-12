@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -9,4 +8,65 @@ a {
 
 h1 {
   color: 15px;
+}
+#index {
+  width:100vw;
+  height: 100vh; 
+}
+#header{
+  margin-top:32px;
+  width:100vw;
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+#header button{
+  width:100px;
+  margin-right:24px;
+}
+#description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#description p{
+  width:1200px;
+
+}
+#addPost{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top:24px;
+}
+#linkField{
+  width:1200px;
+  display:block;
+}
+#addPostSpecifications{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#addPostSpecifications *{
+  margin-top:8px;
+
+}
+#titleField {
+  width:600px;
+}
+#tableForPosts{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  width:1200px;
+  margin-top:50px;
+}
+#postEntries th{
+font-weight: 100;
 }
