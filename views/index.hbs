@@ -1,7 +1,14 @@
 <section id="index">
     <div id="header">
-        <a href="">Login</a>
+    {{#if user}}
+        <a href="users/user-profile">{{ user.username }}</a>
+          <form id="logout-form" action="/logout" method="POST"></form>
+        <a href="">Logout</a>
+        </form>
+        {{else}}
+        <a href="/login">Login</a>
         <a href="/signup">Register</a>
+    {{/if}}
     </div>
     <div id="description">
         <h1>{{appTitle}} 🚀</h1>
