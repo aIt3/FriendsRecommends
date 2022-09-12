@@ -31,7 +31,7 @@ h1 {
   align-items: center;
 }
 #description p{
-  width:1200px;
+  width:750px;
 
 }
 #addPost{
@@ -42,7 +42,7 @@ h1 {
   margin-top:24px;
 }
 #linkField{
-  width:1200px;
+  width:750px;
   display:block;
 }
 #addPostSpecifications{
