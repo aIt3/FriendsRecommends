@@ -46,6 +46,9 @@ app.use("/", index);
 const authRouter = require('./routes/auth.routes'); // <== has to be added
 app.use('/', authRouter); // <== has to be added
 
+const posts = require('./routes/posts.routes'); // <== has to be added
+app.use('/', posts); // <== has to be added
+
 // use session.config
 //require('./config/session.config')(app);
 
