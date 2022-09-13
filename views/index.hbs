@@ -16,16 +16,20 @@
     </div>
     <div id="addPost">
         <form action="/">
-        <input type="text" name ="link" id="linkField" placeholder="Add your link here">
-        <div id="addPostSpecifications">
-        <input type="text" name ="title" id="titleField" placeholder="Add the title for the post here">
-        <select name="mediaType">
-            <option value=""></option>
-        </select>
-        <select name="topic">
-            <option value=""></option>
-        </select>
-        <input type="submit">
+            <input type="text" name ="link" id="linkField" placeholder="Add your link here">
+        <div id="addPostSecondLine">
+            <input type="text" name ="title" id="titleField" placeholder="Add the title for the post here">
+            <input type="text" name ="topic" id="topicField" placeholder="What topics are addressed?">
+        </div>
+         <div id="addPostThirdLine">
+            <select name="mediaType">
+                <option value="Movie">Movie</option>
+                <option value="Podcast">Podcast</option>
+                <option value="Music">Music</option>
+                <option value="Article">Article</option>
+                <option value="Book">Book</option>
+            </select>
+            <input type="submit">
         </div>
         </form>
     </div>
