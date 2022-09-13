@@ -15,7 +15,7 @@
         <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
     </div>
     <div id="addPost">
-        <form action="/">
+        <form action="/" method="POST">
             <input type="text" name ="link" id="linkField" placeholder="Add your link here">
         <div id="addPostSecondLine">
             <input type="text" name ="title" id="titleField" placeholder="Add the title for the post here">
@@ -46,16 +46,23 @@
                     <th>Reactions</th>
                     <th>Options</th>
                 </tr>
+                 {{#each posts}}
                 <tr id="postEntries">
-                    <th class="title">examplteTitle</th>
-                    <th class="user">exampleUser</th>
-                    <th class="dateAdded">exampleData</th>
-                    <th class="mediaType">exampleMedia</th>
-                    <th class="topic">exampleTopic</th>
+                    <th class="title"><a href="{{link}}">{{title}}</a></th>
+                    <th class="user">{{postedByUser.username}}</th>
+                    <th class="dateAdded">{{dateAdded}}</th>
+                    <th class="mediaType">{{mediaType}}</th>
+                    <th class="topic">{{topic}}</th>
                     <th class="reactions">examplereactions</th>
-                    <th class="options">exampleOptions</th>
-
+                    <th class="options">
+                        <button>edit</button>
+                        <form action="/{{posts.id}}/delete" method="POST">
+                        <button>delete</button>
+                        </form>
+                    </th>
                 </tr>
+                {{/each}}
+
     </table>
 
     </div>

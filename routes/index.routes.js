@@ -1,10 +1,19 @@
+const Post = require("../models/Post.model");
+
 const router = require("express").Router();
 
 /* GET home page */
 
 
-router.get('/', (req, res) => {
-  res.render('index', { userInSession: req.session.currentUser });
+router.get('/', (req, res, next) => {
+  
+  Post.find()
+  .populate({path:'postedByUser', model:'User'})
+  .then(postsFromDB => {
+  console.log(postsFromDB)
+    res.render('index', {posts: postsFromDB, userInSession: req.session.currentUser});
+  })
+
 
 });
 

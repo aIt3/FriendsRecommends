@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+
 const postSchema = new Schema({
 	link: String,
 	title: String,
-    postedByUser: String,
-    dateAdded: Date, 
+    postedByUser: {
+		type: Schema.Types.ObjectId,
+		ref: 'User'
+	},
+    dateAdded: String,
     mediaType: String, 
     topic: String,
 	Reactions: {
