@@ -29,7 +29,6 @@ router.post('/signup', (req, res, next) => {
 //// L O G I N 
 
 router.get('/userProfile', (req, res) => {
-
     res.render('users/user-profile', { userInSession: req.session.currentUser });
   
   });
@@ -54,7 +53,7 @@ router.post('/login', (req, res, next) => {
      
             //******* SAVE THE USER IN THE SESSION ********//
             req.session.currentUser = user;
-            res.redirect('/userProfile');
+            res.redirect('/');
                   } else {
             res.render('auth/login', { errorMessage: 'Incorrect password.' });
           }
