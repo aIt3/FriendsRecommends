@@ -2,8 +2,8 @@
     <div id="header">
     {{#if userInSession}}        
     <a href="users/user-profile">{{ userInSession.username }}</a>
-          <form id="logout-form" action="/logout" method="POST"></form>
-        <a href="">Logout</a>
+          <form id="logout-form" action="/logout" method="POST">
+        <button>Logout</button>
         </form>
         {{else}}
         <a href="/login">Login</a>
