@@ -28,5 +28,13 @@ router.get('/post/delete/:id', (req, res, next) => {
     .catch(err => next(err))
 })
 
+router.get('/post/edit/:id', (req, res, next) => {
+    Post.findById(req.params.id)
+    .then(postFromDB => {
+        res.render('post/edit', {post: postFromDB})
+    })
+    .catch(err => next(err))
+})
+
 
 module.exports = router;
