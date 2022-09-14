@@ -26,12 +26,12 @@ app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
-const emojiRoute = require("./routes/emoji");
+const reactionRoute = require("./routes/reactions");
 const userRoute = require("./routes/user");
 
 app.use("/", index);
-app.use("/", emojiRoute)
-app.use("./", userRoute)
+app.use("/", reactionRoute)
+app.use("/", userRoute)
 
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
