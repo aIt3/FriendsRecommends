@@ -2,7 +2,7 @@ const router = require("express").Router();
 const User = require('../models/User.model');
 const Post = require('../models/Post.model');
 
-router.post('/', (req, res, next) => {
+router.post('/post/create', (req, res, next) => {
     let dateAdded = new Date(Date.now())
     const dateaddedShort = dateAdded.toLocaleDateString('en-GB' )
     console.log(dateaddedShort)
@@ -13,16 +13,20 @@ router.post('/', (req, res, next) => {
     // console.log(postedByUser)
     Post.create({link, dateAdded, title, topic, mediaType, postedByUser: req.session.currentUser})
     .then(createdPost => {
-        console.log(createdPost)
+        //console.log(createdPost)
         res.redirect('/')
     })
     .catch(err => next(err))
 
 })
-router.post('/{{posts.id}}/delete', (req, res, next) => {
-    let = deletePost = req.params.id
-    Post.findByIdAndRemove(deletePost)
-    .then(postsFromDB)
+
+router.get('/post/delete/:id', (req, res, next) => {
+    Post.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.redirect('/')
+    })
+    .catch(err => next(err))
 })
+
 
 module.exports = router;
