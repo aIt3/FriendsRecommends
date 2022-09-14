@@ -55,8 +55,11 @@
                     <th class="topic">{{topic}}</th>
                     <th class="reactions"></th>
                     <th class="options">
+
+                        {{#isUserCreator ../userInSession.username postedByUser.username}}
                         <a href="/post/edit/{{_id}}">edit</a>
                         <a href="/post/delete/{{_id}}">Delete</a>
+                        {{/isUserCreator}}
                     </th>
                 </tr>
                 {{/each}}
