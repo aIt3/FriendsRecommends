@@ -16,13 +16,14 @@
     </div>
     <div id="addPost">
         <form action="/post/create" method="POST">
-            <input type="text" name ="link" id="linkField" placeholder="Add your link here">
+            <input type="text" name ="link" id="linkField" value="{{post.link}}">
         <div id="addPostSecondLine">
-            <input type="text" name ="title" id="titleField" placeholder="Add the title for the post here">
-            <input type="text" name ="topic" id="topicField" placeholder="What topics are addressed?">
+            <input type="text" name ="title" id="titleField" placeholder="{{post.title}}">
+            <input type="text" name ="topic" id="topicField" placeholder="{{post.topic}}">
         </div>
          <div id="addPostThirdLine">
             <select name="mediaType">
+                <option selected>{{post.mediaType}}</option>
                 <option value="Movie">Movie</option>
                 <option value="Podcast">Podcast</option>
                 <option value="Music">Music</option>
@@ -33,35 +34,3 @@
         </div>
         </form>
     </div>
-
-    <div id="tableForPosts">
-        <table>
-            <colgroup span="4"></colgroup>
-                <tr id="tableHeadings">
-                    <th>Title</th>
-                    <th>added by User</th>
-                    <th>Dated added</th>
-                    <th>Media</th>
-                    <th>Topic</th>
-                    <th>Reactions</th>
-                    <th>Options</th>
-                </tr>
-                 {{#each posts}}
-                <tr id="postEntries">
-                    <th class="title"><a href="{{link}}">{{title}}</a></th>
-                    <th class="user">{{postedByUser.username}}</th>
-                    <th class="dateAdded">{{dateAdded}}</th>
-                    <th class="mediaType">{{mediaType}}</th>
-                    <th class="topic">{{topic}}</th>
-                    <th class="reactions"></th>
-                    <th class="options">
-                        <a href="/post/edit/{{_id}}">edit</a>
-                        <a href="/post/delete/{{_id}}">Delete</a>
-                    </th>
-                </tr>
-                {{/each}}
-
-    </table>
-
-    </div>
-</section>
