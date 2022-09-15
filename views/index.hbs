@@ -17,7 +17,8 @@
     </div>
     <div id="description">
         <p>FriendsRecommends is a quiet place far away from the noisy internet highways. Get a tea, share your favorite links and lose yourself into a sea of awesomeness.</p>
-    </div>
+        <h1>{{appTitle}} 🚀</h1>
+        <p>chris ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>    </div>
     <div id="addPost">
         <form action="/post/create" method="POST">
             <input type="text" name ="link" id="linkField" placeholder="Add your link here">
@@ -82,7 +83,10 @@
                     <th class="dateAdded">{{dateAdded}}</th>
                     <th class="mediaType">{{mediaType}}</th>
                     <th class="topic">{{topic}}</th>
-                    <th class="reactions"></th>
+                    <th class="reactions">
+                        <button id="thumbsUp" data-postId="{{_id}}">👍</button> 
+                        <button id="thumbsDown" data-postId="{{_id}}" >👎</button>
+                    </th>
                     <th class="options">
 
                         {{#isUserCreator ../userInSession.username postedByUser.username}}
