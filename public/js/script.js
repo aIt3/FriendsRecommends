@@ -39,6 +39,3 @@ button1.addEventListener('click', function(e) {
       console.log(error);
     });
 });
-
-
- 

@@ -11,7 +11,7 @@ const postSchema = new Schema({
 	},
     dateAdded: String,
     mediaType: String, 
-    topic: String,
+    topic: [String],
 	thumbsUp: Number,
 	thumbsDown: Number
 });

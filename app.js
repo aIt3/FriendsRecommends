@@ -13,6 +13,12 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
+hbs.registerHelper('isUserCreator', function (a, b, options) {
+	if (a == b) { return options.fn(this); }
+	return options.inverse(this);
+  });
+  
+
 const app = express();
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
@@ -22,7 +28,7 @@ require("./config")(app);
 const capitalized = require("./utils/capitalized");
 const projectName = "FriendsRecommends";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = capitalized(projectName);
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')

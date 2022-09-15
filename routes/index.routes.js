@@ -10,8 +10,6 @@ router.get('/', (req, res, next) => {
   Post.find()
   .populate({path:'postedByUser', model:'User'})
   .then(postsFromDB => {
-  console.log(postsFromDB)
-  console.log(req.session.currentUser._id)
     res.render('index', {posts: postsFromDB, userInSession: req.session.currentUser});
   })
 
