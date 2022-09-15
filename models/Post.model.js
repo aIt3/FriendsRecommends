@@ -13,8 +13,7 @@ const postSchema = new Schema({
     mediaType: String, 
     topic: String,
 	thumbsUp: Number,
-	thumbsDown: Number,
-	usersVoted: [String]
+	thumbsDown: Number
 });
 
 const Post = mongoose.model('Post', postSchema);
