@@ -10,7 +10,8 @@ router.post('/post/create', isLoggedIn, (req, res, next) => {
     console.log(dateaddedShort)
     dateAdded = dateaddedShort
 
-    const {link, title, topic, mediaType} = req.body
+    let {link, title, topic, mediaType} = req.body
+    topic = topic.split(',')
     //let dateFormated = dateAdded.toLocaleDateString()
     // console.log(postedByUser)
     Post.create({link, dateAdded, title, topic, mediaType, postedByUser: req.session.currentUser})

@@ -28,7 +28,7 @@ require("./config")(app);
 const capitalized = require("./utils/capitalized");
 const projectName = "FriendsRecommends";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = capitalized(projectName);
 
 const session = require('express-session')
 const MongoStore = require('connect-mongo')

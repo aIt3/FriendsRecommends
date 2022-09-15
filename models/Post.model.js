@@ -11,7 +11,7 @@ const postSchema = new Schema({
 	},
     dateAdded: String,
     mediaType: String, 
-    topic: String,
+    topic: [String],
 	Reactions: {
 		type: Schema.Types.ObjectId,
 		// this refers to the model the id above belongs to
