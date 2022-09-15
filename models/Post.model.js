@@ -12,12 +12,8 @@ const postSchema = new Schema({
     dateAdded: String,
     mediaType: String, 
     topic: String,
-	Reactions: {
-		type: Schema.Types.ObjectId,
-		// this refers to the model the id above belongs to
-		ref: 'User',
-        emoji: String
-	}
+	thumbsUp: Number,
+	thumbsDown: Number
 });
 
 const Post = mongoose.model('Post', postSchema);
