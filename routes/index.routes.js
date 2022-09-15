@@ -28,12 +28,20 @@ router.get('/login', (req, res) => res.render('auth/login'));
 // POST route ==> to process form data
 
 // get the click data from the database
-router.post('/clicked/:postId', (req, res) => {
+router.post('/clicked/:postId/thumbsUp', (req, res) => {
   console.log(req.params.postId)
   Post.findByIdAndUpdate(req.params.postId,{$inc: {thumbsUp: 1}},{new:true}).then(updated=>{console.log(updated)})
  
   
 });
+
+router.post('/clicked/:postId/thumbsDown', (req, res) => {
+  console.log(req.params.postId)
+  Post.findByIdAndUpdate(req.params.postId,{$inc: {thumbsDown: 1}},{new:true}).then(updated=>{console.log(updated)})
+ 
+  
+});
+
 
 
 module.exports = router;
