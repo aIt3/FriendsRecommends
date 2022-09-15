@@ -11,6 +11,7 @@ router.get('/', (req, res, next) => {
   .populate({path:'postedByUser', model:'User'})
   .then(postsFromDB => {
   console.log(postsFromDB)
+  console.log(req.session.currentUser._id)
     res.render('index', {posts: postsFromDB, userInSession: req.session.currentUser});
   })
 
@@ -27,9 +28,9 @@ router.get('/login', (req, res) => res.render('auth/login'));
 // POST route ==> to process form data
 
 // get the click data from the database
-router.post('/clicked/:postId', (req, res) => {
+router.post('/clicked/:postId/:userId', (req, res) => {
   console.log(req.params.postId)
-  Post.findByIdAndUpdate(req.params.postId,{$inc: {thumbsUp: 1}},{new:true}).then(updated=>{console.log(updated)})
+  Post.findByIdAndUpdate(req.params.postId,{$inc: {thumbsUp: 1},$push: {usersVoted}},{new:true}).then(updated=>{console.log(updated)})
   
   // db.collection('clicks').find().toArray((err, result) => {
   //   if (err) return console.log(err);
