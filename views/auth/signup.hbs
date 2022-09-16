@@ -1,6 +1,7 @@
 {{!-- views/auth/signup.hbs --}}
 
-<div id="form">
+<div id="signup_form">
+  <h1 id="logo">{{appTitle}}</h1>
 
   <h2>Signup</h2>
 
@@ -14,7 +15,7 @@
     <label> Password
       <input type="password" name="password" placeholder="********" />
     </label>
-    <button type="submit">Create account</button>
+    <button id="signup_button" type="submit">Create account</button>
     {{!-- error message will be added here --}}
   </form>
 </div>

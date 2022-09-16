@@ -6,6 +6,8 @@ body {
   color:#274555;
   display: flex;
   justify-content: center;
+  width:100vw;
+  height:100vh;
  
 }
 
@@ -17,6 +19,7 @@ h1 {
   color: 15px;
 }
 #index {
+  margin-top:24px;
   width:1440px;
   display: flex;
   flex-direction: column;
@@ -46,6 +49,8 @@ h1 {
 #header a{
   width:24px;
   margin-right:24px;
+  margin-bottom:0;
+  padding:0;
 }
 #profile{
   text-transform: uppercase;
@@ -72,22 +77,28 @@ h1 {
 }
 #header #login{
   text-transform: uppercase;
-  height:30px;
+  height:20px;
   width: 50px;
   text-decoration:none;
-  background-color: #ff5f2e;
+  background-color: #FFFFFE;
   padding:4px 8px;
   border-style:solid; 
   border:none;
-  border-width:1px;
-  border:1px solid #ff5f2e;
+  border-width:3px;
+  border:2px solid #ff5f2e;
   letter-spacing: 0.5px;
-  color:#FFFFFE;
+  color:#ff5f2e;
   font-weight: 700;
 }
+#header #login:hover{
+  background-color: #e7e7e4;
+
+
+}
+
 #header #signup{
   text-transform: uppercase;
-  height:30px;
+  height:20px;
   background-color: #ff5f2e;
   text-decoration:none;
   width: 70px;
@@ -99,6 +110,11 @@ h1 {
   letter-spacing: 0.5px;
   color:#FFFFFE;
   font-weight: 700;
+}
+#header #signup:hover{
+  background-color: #dd5227;
+  border:1px solid #dd5227;
+
 }
 #description {
   display: flex;
@@ -178,6 +194,10 @@ display:flex;
   font-weight: 700;
   
 }
+#addPostThirdLine button:hover{
+  background-color: #dd5227;
+  cursor: pointer;
+}
 
 #addPost *{
   margin-top:4px;
@@ -211,10 +231,135 @@ table svg{
   vertical-align: bottom;
   margin-bottom: 2px;
 }
+table button {
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  height:30px;
+  width: 80px;
+  background-color: #FFFFFE;
+  border-style:solid; 
+  border:none;
+  border-width:1px;
+  border:1.5px solid #ff5f2e;
+  color:#ff5f2e;
+  font-weight: 700;
+}
+table button:hover{
+  background-color: #e7e7e4;
+  cursor: pointer;
+
+}
+table button svg{
+  fill:#ff5f2e;
+
+
+}
 #postEntries th{
 font-weight: 500;
 border-top: 0.5em solid transparent;
 
 
+}
+
+#login_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#login_form *{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:4px;
+}
+#email{
+  display: flex;
+flex-direction: row;
 
 }
+#password{
+  display: flex;
+flex-direction: row;
+
+}
+#login_form{
+  text-align:center;
+}
+#login_form h2{
+  font: 16px "Open Sans", sans-serif;
+  background-color: #FFFFFE;
+  color:#274555;
+  font-weight:600;
+
+}
+#logo{
+  margin-right: auto;
+  font-family: 'Merriweather', serif;
+  font-weight:950;
+  font-size:40px;
+  font-size:24px;
+  color:#ff5f2e;
+  margin-bottom:32px;
+
+}
+#login_button{
+  width:170px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  height:30px;
+  background-color: #ff5f2e;
+  border-style:solid; 
+  border:none;
+  border-width:1px;
+  border:1.5px solid #ff5f2e;
+  color:#FFFFFE;
+  font-weight: 700;
+}
+#login_button:hover{
+  background-color: #dd5227;
+  border:1px solid #dd5227;
+  cursor: pointer;
+
+}
+
+#signup_form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+#signup_form *{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:8px;
+}
+#signup_form h2{
+  font: 16px "Open Sans", sans-serif;
+  background-color: #FFFFFE;
+  color:#274555;
+  font-weight:600;
+
+}
+#signup_button{
+  width:170px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  height:30px;
+  background-color: #ff5f2e;
+  border-style:solid; 
+  border:none;
+  border-width:1px;
+  border:1.5px solid #ff5f2e;
+  color:#FFFFFE;
+  font-weight: 700;
+
+}
+#signup_button:hover{
+  background-color: #dd5227;
+  border:1px solid #dd5227;
+  cursor: pointer;
+}
+
